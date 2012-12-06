@@ -1,0 +1,15 @@
+#!/bin/bash
+# a backup wrapper for all backup candidates on this host.
+# the users must be in the group 'backup' and must have a
+# configuration file of storebackup in $HOME/.backup/backup.conf
+#
+# (c) jens@0x6a.de
+# Jens Nazarenus
+
+USERS=$(cat /etc/group | grep backup | sed 's/.*://g;s/,/\n/g')
+
+for i in $(echo "$USERS")
+do
+  HOMEDIR=$(cat /etc/passwd | grep $i | awk -F : '{ print $6 }')
+  storebackup -f $HOMEDIR/.backup/backup.conf
+done

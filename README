@@ -1,0 +1,5 @@
+A backup wrapper of storebackup
+
+Invoke storebackup for every user in the group 'backup'.
+The configuration file for a user must be available in 
+$HOME/.backup/backup.conf
