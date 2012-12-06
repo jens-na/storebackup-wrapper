@@ -1,5 +1,5 @@
-A backup wrapper of storebackup
+storebackup-wrapper
 
-Invoke storebackup for every user in the group 'backup'.
-The configuration file for a user must be available in 
-$HOME/.backup/backup.conf
+A backup wrapper for all backup candidates on this host.
+the users must be in the group 'backup' and must have a
+configuration file of storebackup in $HOME/.backup/backup.conf
